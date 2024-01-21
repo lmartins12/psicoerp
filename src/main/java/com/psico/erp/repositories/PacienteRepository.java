@@ -1,4 +1,4 @@
-package com.psico.erp.repository;
+package com.psico.erp.repositories;
 
 import com.psico.erp.entities.Paciente;
 import org.springframework.data.jpa.repository.JpaRepository;
