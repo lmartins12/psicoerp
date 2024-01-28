@@ -1,5 +1,6 @@
 package com.psico.erp.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -18,7 +19,8 @@ public class Psicologo {
     private String senha;
     private String especializacoes;
 
-    @OneToMany(mappedBy = "psicologo")
+    @OneToMany(mappedBy = "psicologo", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @JsonManagedReference
     private List<Paciente> pacientes;
 
     @OneToMany(mappedBy = "psicologo")

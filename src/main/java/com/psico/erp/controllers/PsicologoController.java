@@ -25,7 +25,7 @@ public class PsicologoController {
     }
 
     @PostMapping
-    public Psicologo createPsicologo(Psicologo psicologo) {
+    public Psicologo createPsicologo(@RequestBody Psicologo psicologo) {
         return psicologoService.createPsicologo(psicologo);
     }
 
